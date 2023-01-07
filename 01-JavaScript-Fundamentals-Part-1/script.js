@@ -297,3 +297,90 @@ if (hasDriversLicense && hasGoodVision && !isTried) {
 }
 
 */
+
+/*
+const day = "wednesday";
+
+switch (day) {
+  case "monday": // day === "monday"
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record Videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy weekened");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+
+const week = "Thursday";
+
+if (week === "Monday") {
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");
+} else if (week === "Tuesday") {
+  console.log("Prepare theory videos");
+} else if (week === "Wednesday" || week === "Thursday") {
+  console.log("Write code examples");
+} else if (week === "Friday") {
+  console.log("Record Videos");
+} else if (week === "Saturday" || week === "Sunday") {
+  console.log("Enjoy the weekend!");
+} else {
+  console.log("Not a valid day!");
+}
+
+*/
+
+/*
+
+//expressions -> they produce a value
+3 + 4;
+1991;
+true && false && !false;
+
+//statement -> they perform a action
+if (23 > 10) {
+  const str = "23 is bigger";
+}
+
+//JavaScript expects statements and expressions in different places.
+//For example -> In a tempalte Literal, we can only insert expressions, but not statements.
+const me = "Kris";
+console.log(`I'm ${2002 - 2023} years old ${me}`);
+
+*/
+
+/*
+const age = 23;
+age >= 18
+  ? console.log("I like to drink wine")
+  : console.log("I like to drink water");
+
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink);
+
+// if/else statement
+
+let drinkTwo;
+if (age >= 18) {
+  drinkTwo = "wine";
+} else {
+  drinkTwo = "water";
+}
+
+console.log(drinkTwo);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+*/
