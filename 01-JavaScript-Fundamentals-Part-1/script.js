@@ -112,3 +112,71 @@ const averageAge = (ageKris + ageAlex) / 2;
 console.log(ageKris, ageAlex, averageAge);
 
 */
+
+/*
+
+const firstName = "Kris";
+const job = "Junior Developer";
+const birthYear = 2002;
+const currentYear = 2023;
+
+// without Template Literal
+
+const kris =
+  "I'm " +
+  firstName +
+  ", a " +
+  (currentYear - birthYear) +
+  " years old " +
+  job +
+  "!";
+
+console.log(kris);
+
+// const newName = ` ${variableName} `   --> Template Literal, most used ES6 features;
+
+const newKris = `I'm ${firstName}, a ${
+  currentYear - birthYear
+} years old ${job}! `;
+
+console.log(newKris);
+
+console.log(`Just a regular string using backticks`);
+
+// multi line string without Template Literals
+
+console.log(
+  "Multi line String \n\
+without using \ntemplate Literals"
+);
+
+// multi line string using Template Literals
+
+console.log(`Multi line string
+using
+template literals`);
+
+*/
+
+/*
+const age = 15;
+
+if (age >= 18) {
+  console.log(`Sarah can start driving license`);
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 2012;
+
+let century;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+console.log(century);
+*/
