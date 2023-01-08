@@ -132,3 +132,87 @@ console.log(yearsUntilRetirement(2002, "Kris"));
 console.log(yearsUntilRetirement(1950, "Mike"));
 
 */
+
+/*
+
+"use strict";
+
+const friends = ["Kris", "Alex", "Leran", "keagan", "Abdul"]; // called the literal syntax
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020); // different way of creating a array
+console.log(years);
+
+console.log(friends[4]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]); // -- Inside of the brackets [] we can put any expression -> expression is something which produces a value
+
+friends[4] = "Tom";
+console.log(friends);
+
+// friends = ["One", "Two", "Three"]; -> we cannot change all the friends values when using const, use let
+
+const firstName = "Kris";
+const kris = [firstName, "Rego", 2023 - 2002, friends];
+
+console.log(kris);
+console.log(kris.length);
+
+// Exercise
+
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const numbers = [1990, 1967, 2002, 2010, 2018];
+
+console.log(
+  calcAge(numbers[0]),
+  calcAge(numbers[1]),
+  calcAge(numbers[numbers.length - 1])
+);
+
+const ages = [
+  calcAge(numbers[0]),
+  calcAge(numbers[1]),
+  calcAge(numbers[numbers.length - 1]),
+];
+
+console.log(ages);
+
+*/
+
+/*
+"use strict";
+
+const friends = new Array("Michael", "Steven", "Peter");
+
+// Add elements
+const newLength = friends.push("Jay");
+console.log(friends);
+console.log(newLength); // Show the length of the new array
+
+const newTopLength = friends.unshift("Kris");
+console.log(friends);
+console.log(newTopLength);
+
+// Remove elements
+
+const popped = friends.pop();
+friends.pop();
+console.log(friends);
+console.log(popped);
+
+friends.shift();
+console.log(friends);
+
+console.log(friends.indexOf("Steven"));
+
+console.log(friends.includes("Steven")); // It check for strict values, it does not do type coercion.
+console.log(friends.includes("Bob"));
+
+if (friends.includes("Steven")) {
+  console.log("You have a friend called Steven");
+}
+*/
