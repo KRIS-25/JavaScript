@@ -337,3 +337,132 @@ console.log(kris.age);
 console.log(kris.getSummary());
 
 */
+
+/*
+
+"use strict";
+
+for (let rep = 1; rep <= 10; rep += 1) {
+  console.log("Lifting weights repetition " + rep);
+}
+
+*/
+
+/*
+
+"use strict";
+
+const kris = [
+  "Kris",
+  "Rego",
+  2037 - 1991,
+  "Student",
+  ["Michael", "Peter", "Steven"],
+];
+
+const types = [];
+
+// console.log(kris[0]);
+// console.log(kris[1]);
+// ...
+// console.log(kris[4]);
+
+for (let i = 0; i < kris.length; i++) {
+  // Reading from kris array
+  console.log(kris[i], typeof kris[i]);
+
+  // filling types array
+
+  //   type[0] = ".."
+  //   types[i] = typeof kris[i];
+
+  // types.push(...)
+  types.push(typeof kris[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages[i] = 2037 - years[i];
+}
+
+console.log(ages);
+
+// continue and break
+
+console.log("--- ONLY STRINGS ---");
+
+for (let i = 0; i < kris.length; i++) {
+  if (typeof kris[i] !== "string") continue; // In other word continue is skipping those elements
+
+  console.log(kris[i], typeof kris[i]);
+}
+
+console.log("--- BREAK WITH NUMBER ---");
+
+for (let i = 0; i < kris.length; i++) {
+  if (typeof kris[i] === "number") break;
+
+  console.log(kris[i], typeof kris[i]);
+}
+
+*/
+
+/*
+
+"use strict";
+
+const kris = [
+  "Kris",
+  "Rego",
+  2023 - 2002,
+  "Student",
+  ["Michael", "Peter", "Steven"],
+];
+
+for (let i = kris.length - 1; i >= 0; i--) {
+  console.log(i, kris[i]);
+}
+
+// loop inside a loop
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`--------------Starting Exercise ${exercise}`);
+
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+  }
+}
+
+*/
+
+/*
+
+"use strict";
+
+// for (let rep = 1; rep <= 5; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+console.log("While LOOP");
+
+let rep = 1;
+while (rep <= 5) {
+  console.log(`Lifting weights repetition ${rep}`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}
+
+*/
