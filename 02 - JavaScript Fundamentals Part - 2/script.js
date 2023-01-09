@@ -216,3 +216,124 @@ if (friends.includes("Steven")) {
   console.log("You have a friend called Steven");
 }
 */
+
+/*
+
+"use strict";
+
+const krisArray = [
+  "Kris",
+  "Rego",
+  2037 - 2002,
+  "Student",
+  ["Leran", "Niraj", "Abdul"],
+];
+
+const kris = {
+  firstName: "Kris",
+  lastName: "Rego",
+  birthDate: 2037 - 2002,
+  job: "Student",
+  friends: ["leran", "Niraj", "Abdul"],
+};
+
+// This is called the object literal syntax
+// Now we have an object with 5 'key' 'value' pairs.
+// Now each of this keys is also called a property.
+
+
+*/
+
+/*
+
+"use strict";
+
+const kris = {
+  firstName: "Kris",
+  lastName: "Rego",
+  age: 2037 - 2002,
+  job: "Student",
+  friends: ["Michael", "Peter", "Steven"],
+};
+
+console.log(kris);
+
+console.log(kris.lastName);
+console.log(kris["lastName"]);
+
+const nameKey = "Name";
+console.log(kris["first" + nameKey]);
+console.log(kris["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about Kris ? Choose between firstName, lastName, age, job, and friends"
+);
+
+if (kris[interestedIn]) {
+  console.log(kris[interestedIn]);
+} else {
+  console.log("Please enter a valid input");
+}
+
+// Adding new properties to the object
+
+kris.location = "India";
+kris["email"] = "krisrego75@gmail.com";
+console.log(kris);
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is called Michael"
+
+console.log(
+  `${kris["firstName"]} has ${kris.friends.length} friends, and his best friend is called ${kris.friends[0]}`
+);
+
+*/
+
+/*
+
+"use strict";
+
+const kris = {
+  firstName: "Kris",
+  lastName: "Rego",
+  birthYear: 1991,
+  job: "Student",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  //   calcAge: function (birthYear) {
+  //     return 2037 - birthYear;
+  //   },
+
+  // console.log(kris["calcAge"](1991));
+
+  //   calcAge: function () {
+  //     // console.log(this);      <- This helps to understand it better
+  //     return 2037 - this.birthYear;
+  //   },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${kris.age} years old ${
+      this.job
+    }. and he has ${this.hasDriversLicense ? "a" : "no"} driver's liense`;
+  },
+};
+
+console.log(kris.calcAge()); // Calculate this method once to reuse again and again using kris.age
+
+console.log(kris.age);
+console.log(kris.age);
+console.log(kris.age);
+
+//Challenge
+// "Kris is a 20 year old Student. and he has a driver's license"
+
+console.log(kris.getSummary());
+
+*/
