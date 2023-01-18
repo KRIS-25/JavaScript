@@ -1,5 +1,23 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const halfName = 't';
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`sa${halfName}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -8,46 +26,119 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-
+  // ES6 enchanced object literals
+  openingHours,
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
   // We destructured the incoming object in variable names in this parameter
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your declicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
-  orderPizza: function (mainIngredent, ...otherIngredent) {
+  orderPizza(mainIngredent, ...otherIngredent) {
     console.log(mainIngredent);
     console.log(otherIngredent);
   },
 };
+
+/*
+
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+*/
+
+/*
+// Optional Chaining (?.)
+
+restaurant.openingHours.mon && console.log(restaurant.openingHours.mon.open);
+
+restaurant.openingHours &&
+  restaurant.openingHours.mon &&
+  console.log(restaurant.openingHours.mon.open);
+
+// with optinal chaining
+console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours.mon.open); // This will give an error
+
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+for (const day of days) {
+  // you have to use [] and not . for object because you will able to make it dynamic -> ex the day right now
+  const open = restaurant['openingHours'][day]?.['open'] ?? 'closed';
+  console.log(`On ${day}, we open at : ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Kris', email: 'krisrego@gmai.com' }];
+
+console.log(users[0]?.name ?? 'User array empty');
+
+// solid selecting a object inside a array
+console.log(users[0].name);
+
+// by using if else and not optinal chaining
+if (users.length > 0) {
+  console.log(users[0].name);
+} else {
+  console.log('User array empty');
+}
+
+*/
+
+/*
+// for of loop
+
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
+*/
+
+/*
 
 const rest1 = {
   name: 'Capri',
@@ -59,8 +150,6 @@ const rest2 = {
   name: 'La Piazze',
   owner: 'Giovanni Rossi',
 };
-
-/*
 
 // OR assignment operator
 // rest1.numGuests = rest1.numGuests || 10;
