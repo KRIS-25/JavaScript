@@ -51,6 +51,142 @@ const restaurant = {
 
 /*
 
+// Another way of adding elements in maps
+
+const question = new Map([
+  ['Question', 'What is the best programming language in the word?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again!'],
+]);
+
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz app
+console.log(question.get('Question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+console.log(question.get(answer === question.get('correct')));
+
+// Converting map back to an array
+console.log(...question);
+// same methods we applied for objects we can do for maps
+// console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+*/
+
+/*
+// Maps
+const hotel = new Map();
+hotel.set('name', 'Classico Italiano');
+hotel.set(1, 'France, Italy');
+
+console.log(hotel.set(2, 'Lisbon, Portugal'));
+
+// You can also chain set method
+hotel
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+// To Read data from the map, use get.
+console.log(hotel.get('name'));
+console.log(hotel.get(false));
+
+const time = 21;
+console.log(hotel.get(time > hotel.get('open') && time < hotel.get('close')));
+
+// To check if the map contains a certain key
+console.log(hotel.has('name'));
+
+// To delete elements
+hotel.delete(2);
+console.log(hotel);
+
+// To check the size
+console.log(hotel.size);
+
+// To delete all the elements
+// hotel.clear();
+// console.log(hotel);
+
+const arr = [1, 2];
+
+// hotel.set([1, 2], 'Test');
+
+hotel.set(arr, 'Test');
+hotel.set(document.querySelector('h1'), 'Heading');
+console.log(hotel);
+console.log(hotel.size);
+
+// console.log(hotel.get([1, 2])); // This won't display the Test because they are not the same object in the heap.
+
+console.log(hotel.get(arr));
+*/
+
+/*
+// Sets
+
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Pasta', 'Risotto']);
+console.log(orderSet);
+
+console.log(new Set('kris'));
+
+// We can get the size of the set
+console.log(orderSet.size);
+
+// To check if certain element is in a set
+console.log(orderSet.has('Bread'));
+console.log(orderSet.has('Pizza'));
+
+// To add elements in a set
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+
+// to delete elements in set
+orderSet.delete('Risotto');
+console.log(orderSet);
+
+// to delete all of the elements of a set
+// orderSet.clear();
+// console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+// convert a set to a array
+const stuffUnique = [...new Set(staff)];
+console.log(stuffUnique);
+
+// Unique size of the array
+console.log(new Set(staff).size);
+
+console.log(new Set('KrisRego').size);
+
+*/
+/*
+
 // Property NAMES
 const properties = Object.keys(openingHours);
 console.log(properties);
