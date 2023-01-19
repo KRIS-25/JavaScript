@@ -49,6 +49,194 @@ const restaurant = {
   },
 };
 
+// Working with strings - 3
+
+console.log(`a+very+nice+string`.split('+'));
+
+console.log(`Kris Rego`.split(' '));
+
+const [firstName, lastName] = 'kris Rego'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toLowerCase()].join(' '); // Anything words inside join('')
+
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const arr = [];
+  const capitalN = name.toLowerCase().split(' ');
+  for (const n of capitalN) {
+    arr.push(n[0].toUpperCase() + n.slice(1));
+
+    // another approach with replace -> same result
+    // arr.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(arr.join(' '));
+};
+
+capitalizeName('kris rego');
+capitalizeName('alex something rego');
+capitalizeName('wowow SOMETHING Feels RIGHT');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+
+console.log('kris'.padStart(25, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // else -> String(number)
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(23432324254546));
+console.log(maskCreditCard('32452532542626'));
+
+// Repeat
+const message2 = 'Bad Weather... All Departues Delayed....';
+
+console.log(message2.repeat(2));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'<- '.repeat(n)}`);
+};
+
+planesInLine(3);
+planesInLine(5);
+/*
+
+//Strings Part 2
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+console.log(`kris`.toUpperCase());
+
+// Fix capitalization in name
+
+const passenger = 'kRiS'; // Kris
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Camparing emails
+
+const email = 'krisrego75@gmail.com';
+const loginEmail = '    krisrego75@gmail.com \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+// To remove extra spaces -> white space
+// trim()
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+// We can chain methods on the string also
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+console.log(email === normalizedEmail);
+
+// replacing
+
+const priceGB = '288,97#';
+const priceUS = priceGB.replace('#', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to barding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+// To replace all the door words
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Very Simple Regular Expression -> g stands for global
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log(`Part of the NEW Airbus family `);
+}
+
+// Practice exercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log(`You are not allowed on board`);
+  } else {
+    console.log(`Welcome aboard`);
+  }
+};
+
+checkBaggage('I have a laptop, some food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a GUN for protection');
+
+*/
+
+/*
+// Strings - Part 1
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(`B737`[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+
+// Even search for words on the starting index -> invalid will be -1
+console.log(airline.indexOf('Portugal'));
+
+// Begin Parameter
+console.log(airline.slice(2));
+
+// End Parameter -> The lenght of the extracted string will always be End - Beginning
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// If we start with negativve numbers it will start extracting from the end
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+// Exercise
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1); // directly selects the last element
+
+  if (s === 'B' || s === 'E') {
+    console.log(`You got the middle seat`);
+  } else {
+    console.log(`You got lucky`);
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('kris'));
+console.log(typeof new String('kris'));
+console.log(typeof new String('kris').slice(1));
+
+*/
+
 /*
 
 // Another way of adding elements in maps
