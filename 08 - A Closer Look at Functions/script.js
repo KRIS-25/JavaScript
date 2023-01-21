@@ -122,6 +122,8 @@ hail('Hii')('Kris');
 
 */
 
+/*
+
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
@@ -215,3 +217,79 @@ const addTaxRate = function (rate) {
 
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
+
+*/
+
+/*
+
+(function () {
+  console.log(`This will never run again`);
+})();
+
+// Immediately Invoked Function Expression or IIFE for short
+
+(() => console.log(`This is will never run again`))();
+
+*/
+
+/*
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+// Take a look at closure
+
+console.dir(booker);
+
+*/
+
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+
+// Re-assigning f function
+h();
+f();
+console.dir(f);
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3);
