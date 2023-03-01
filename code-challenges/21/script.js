@@ -47,9 +47,9 @@ const renderError = function (msg) {
   countriesContainer.style.fontSize = '3rem';
 };
 
-const renderCountry = function (data) {
+const renderCountry = function (data, className = '') {
   const html = `
-  <article class="country">
+  <article class="country ${className}">
   <img class="country__img" src="${data.flag}" />
   <div class="country__data">
   <h3 class="country__name">${data.name}</h3>
@@ -93,7 +93,15 @@ const whereAmI = function (lat, lng) {
     .then((data) => {
       // console.log(data[0]);
       renderCountry(data[1]);
+      const neighbour = data[1].borders[3];
+      if (!neighbour) return;
+
+      // Country 2
+      fetch(`https://restcountries.com/v2/alpha/${neighbour}`)
+        .then((response) => response.json())
+        .then((data) => renderCountry(data, 'neighbour'));
     })
+
     .catch((err) => {
       console.warn(`${err}`);
       renderError(`${err.message}, Try again!`);

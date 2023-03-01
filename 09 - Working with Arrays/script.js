@@ -105,7 +105,7 @@ const calcDisplaySummary = function (acc) {
   const outGoing = acc.movements
     .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.innerHTML = `${Math.abs(outGoing)}&#8377;`;
+  labelSumOut.innerHTML = `${Math.abs(outGoing)}&#8377;`; // Math.abs converts negative numbers into positive
 
   const interest = acc.movements
     .filter((mov) => mov > 0)
@@ -180,7 +180,7 @@ btnLogin.addEventListener('click', function (e) {
 
     // Clearing input fields
     inputLoginUsername.value = inputLoginPin.value = '';
-    inputLoginPin.blur();
+    inputLoginPin.blur(); // Removes keyboard focus
   }
 });
 
